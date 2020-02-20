@@ -988,7 +988,7 @@ static u8 get_pwr_limit_from_table(struct rtl_priv *rtlpriv,
 	return ret;
 }
 
-static void get_rate_value(struct rtl_priv *rtlpriv,
+void get_rate_value(struct rtl_priv *rtlpriv,
 	u32 reg_addr, u32 bit_mask, u32 value,
 	u8 out_rate[], s8 out_pwr_val[], u8 *out_num)
 {
