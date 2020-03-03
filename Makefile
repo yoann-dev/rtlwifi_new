@@ -142,6 +142,7 @@ endif
 	@depmod -a
 
 	@#copy firmware images to target folder
+	@mkdir -p $(FIRMWAREDIR)/rtlwifi
 	@cp -f firmware/rtlwifi/* $(FIRMWAREDIR)/rtlwifi/.
 	@mkdir  -p $(FIRMWAREDIR)/rtw88
 	@mv $(FIRMWAREDIR)/rtlwifi/rtl8822be* $(FIRMWAREDIR)/rtw88/.
