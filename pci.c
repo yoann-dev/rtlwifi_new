@@ -1849,6 +1849,10 @@ static int rtl_pci_start(struct ieee80211_hw *hw)
 		rtlpriv->btcoexist.btc_ops->btc_init_variables_wifi_only(
 								rtlpriv);
 	}
+	/* Either btc_context or wifi_only_context must have been allocated */
+	if (!rtlpriv->btcoexist.btc_context &&
+	    !rtlpriv->btcoexist.wifi_only_context)
+		return -ENOMEM;
 
 	err = rtlpriv->cfg->ops->hw_init(hw);
 	if (err) {
