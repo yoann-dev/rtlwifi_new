@@ -2740,7 +2740,9 @@ void rtl_fwevt_wq_callback(void *data)
 	struct ieee80211_hw *hw = rtlworks->hw;
 	struct rtl_priv *rtlpriv = rtl_priv(hw);
 
+	pr_info("****** Calling c2h_command_handle with hw %p\n", hw);
 	rtlpriv->cfg->ops->c2h_command_handle(hw);
+	pr_info("****** back from c2h_command_handle\n");
 }
 
 void rtl_c2hcmd_enqueue(struct ieee80211_hw *hw, u8 tag, u8 len, u8 *val)

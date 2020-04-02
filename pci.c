@@ -1064,8 +1064,10 @@ static irqreturn_t _rtl_pci_interrupt(int irq, void *dev_id)
 		if (intvec.inta & rtlpriv->cfg->maps[RTL_IMR_C2HCMD]) {
 			RT_TRACE(rtlpriv, COMP_INTR, DBG_TRACE,
 				 "firmware interrupt!\n");
+	pr_info("****** Calling cqueue_delayed_work\n");
 			queue_delayed_work(rtlpriv->works.rtl_wq,
 					   &rtlpriv->works.fwevt_wq, 0);
+	pr_info("****** Back from cqueue_delayed_work\n");
 		}
 	}
 
