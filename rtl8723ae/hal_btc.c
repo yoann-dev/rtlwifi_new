@@ -1699,9 +1699,14 @@ static void rtl8723e_dm_bt_parse_bt_info(struct ieee80211_hw *hw,
 		hal_coex_8723.c2h_bt_inquiry_page = false;
 
 
+	pr_info("****** line %d, bt_info 0x%x\n", __LINE__, bt_info);
 	if (bt_info & BTINFO_B_CONNECTION) {
 		RT_TRACE(rtlpriv, COMP_BT_COEXIST, DBG_DMESG,
 			"[BTC2H], BTInfo: bConnect=true\n");
+		pr_info("****** rtlpriv %p\n", rtlpriv);
+		pr_info("****** rtlpriv->btcoexist  %p\n", rtlpriv->btcoexist);
+		pr_info("****** rtlpriv->btcoexist.bt_busy %d\n", rtlpriv->btcoexist.bt_busy);
+		pr_info("****** rtlpriv->btcoexist.cstate %d\n", rtlpriv->btcoexist.cstate);
 		rtlpriv->btcoexist.bt_busy = true;
 		rtlpriv->btcoexist.cstate &= ~BT_COEX_STATE_BT_IDLE;
 	} else {
