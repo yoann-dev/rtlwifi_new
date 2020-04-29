@@ -294,7 +294,11 @@ static void rtl_rate_update(void *ppriv,
 }
 #endif
 
+#if (LINUX_VERSION_CODE >= KERNEL_VERSION(5, 7, 0))
+static void *rtl_rate_alloc(struct ieee80211_hw *hw)
+#else
 static void *rtl_rate_alloc(struct ieee80211_hw *hw, struct dentry *debugfsdir)
+#endif
 {
 	struct rtl_priv *rtlpriv = rtl_priv(hw);
 	return rtlpriv;
