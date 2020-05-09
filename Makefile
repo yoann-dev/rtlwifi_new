@@ -1,8 +1,7 @@
 # SPDX-License-Identifier: GPL-2.0
 SHELL := /bin/sh
 CC = gcc
-KVER  := $(shell uname -r)
-#KVER  :=
+KVER  ?= $(if $(KERNELRELEASE),$(KERNELRELEASE),$(shell uname -r))
 KSRC := /lib/modules/$(KVER)/build
 #KSRC := /work/linux-src/linux-stable
 FIRMWAREDIR := /lib/firmware/
