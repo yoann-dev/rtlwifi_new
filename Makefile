@@ -71,7 +71,15 @@ ccflags-y += -D_ieee80211_is_robust_mgmt_frame=ieee80211_is_robust_mgmt_frame
 subdir-ccflags-y += -D_ieee80211_is_robust_mgmt_frame=ieee80211_is_robust_mgmt_frame
 endif
 # Determine # args for rtl_rate_alloc
-TEMP=$(shell grep alloc ${KSRC}/include/net/mac80211.h | grep void | grep dentry)
+# Debian specific
+ifneq ("","$(wildcard /lib/modules/$(KVER)/source/include/net/mac80211.h)")
+MAC_80211_PATH := /lib/modules/$(KVER)/source/include/net/mac80211.h
+else
+# Others
+MAC_80211_PATH := $(KSRC)/include/net/mac80211.h
+endif
+$(info Path for mac80211 header : $(MAC_80211_PATH))
+TEMP=$(shell grep alloc ${MAC_80211_PATH} | grep void | grep dentry)
 ifeq (${TEMP},)
 ccflags-y += -DRTL_RATE_ALLOC_1_ARG
 endif
