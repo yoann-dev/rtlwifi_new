@@ -13,14 +13,14 @@ rtl8192ce, rtl8192cu, rtl8192se, rtl8192de, rtl8188ee, rtl8192ee, rtl8723ae, rtl
 and rtl8723de.
 
 #### Installation instruction
-You can find <<YOUR WIRELESS DRIVER CODE>> using `lspci | grep Wireless`.
+You can find `<<YOUR WIRELESS DRIVER CODE>>` using `lspci | grep Wireless`.
   
 You will need to install "make", "gcc", "kernel headers", "kernel build essentials", and "git".
 
 If you are running Ubuntu, then
 
 ```
-sudo apt-get install linux-headers-generic build-essential git
+sudo apt install linux-headers-generic build-essential git
 ```
 
 To build and install kernel, use the following script :
