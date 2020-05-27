@@ -17,10 +17,10 @@ You can find `<<YOUR WIRELESS DRIVER CODE>>` using `lspci | grep Wireless`.
   
 You will need to install "make", "gcc", "kernel headers", "kernel build essentials", and "git".
 
-If you are running Ubuntu, then
+If you are running Debian, then
 
 ```
-sudo apt install linux-headers-generic build-essential git
+sudo apt install apt install linux-headers-$(uname -r) build-essential git
 ```
 
 To build and install kernel, use the following script :
