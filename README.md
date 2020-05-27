@@ -2,7 +2,7 @@ rtlwifi_new_debian_10
 ===========
 ### A repo for the newest Realtek rtlwifi codes.
 
-Fork from https://github.com/lwfinger/rtlwifi_new.git ONLY extended branch here.
+Fork from https://github.com/lwfinger/rtlwifi_new.git **ONLY extended branch here**.
 
 This code will build on any kernel 4.2 and newer as long as the distro has not modified
 any of the kernel APIs.
