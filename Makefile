@@ -97,6 +97,7 @@ all:
 install: all
 ifeq (,$(wildcard ./backup_drivers.tar))
 	@echo Making backups
+	@mkdir -p $(MODDESTDIR)
 	@tar cPf backup_drivers.tar $(MODDESTDIR)
 endif
 
