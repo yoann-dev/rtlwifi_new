@@ -20,7 +20,7 @@ You will need to install "make", "gcc", "kernel headers", "kernel build essentia
 If you are running Debian, then
 
 ```
-sudo apt install apt install linux-headers-$(uname -r) build-essential git
+sudo apt install linux-headers-$(uname -r) build-essential git
 ```
 
 To build and install kernel, use the following script :
