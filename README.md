@@ -35,3 +35,4 @@ fix slow signal) :
 ```
 sudo ./install_wifi.sh rtl8723de "options rtl8723de ant_sel=2"
 ```
+And then shut down the computer completely and start it to make sure the driver is properly loaded.
