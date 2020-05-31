@@ -11,3 +11,5 @@ jobs:
       run: apt-get -y install linux-headers-amd64 build-essential
     - name: make
       run: make
+      env:
+        KERNELRELEASE: "4.19.0-9-amd64"
