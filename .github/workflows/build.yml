@@ -1,7 +1,8 @@
 on: [push]
 jobs:
   kernel-4-19:
-    runs-on: debian-buster
+    runs-on: ubuntu-latest
+    container: debian:buster
     steps:
     - uses: actions/checkout@v2
     - name: update
