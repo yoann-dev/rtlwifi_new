@@ -6,8 +6,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: update
-      run: apt-get update && apt-get upgrade
+      run: apt-get -y update && apt-get -y upgrade
     - name: install
-      run: apt-get install linux-headers-amd64 build-essential
+      run: apt-get -y install linux-headers-amd64 build-essential
     - name: make
       run: make
