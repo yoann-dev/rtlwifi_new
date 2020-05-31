@@ -1,0 +1,19 @@
+name: Build CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  kernel-4.19:
+    runs-on: debian-buster
+    steps:
+    - uses: actions/checkout@v2
+    - name: update
+      run: apt-get update && apt-get upgrade
+    - name: install
+      run: apt-get install linux-headers-amd64 build-essential
+    - name: make
+      run: make
