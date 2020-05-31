@@ -5,11 +5,11 @@ jobs:
     container: debian:buster
     steps:
     - uses: actions/checkout@v2
-    - name: update
+    - name: Update packages
       run: apt-get -y update && apt-get -y upgrade
-    - name: install
+    - name: Install packages for build
       run: apt-get -y install linux-headers-amd64 build-essential
-    - name: make
+    - name: Build drivers
       run: make
       env:
         KERNELRELEASE: "4.19.0-9-amd64"
