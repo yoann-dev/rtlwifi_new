@@ -1,11 +1,4 @@
-name: Build CI
-
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
-
+on: [push]
 jobs:
   kernel-4.19:
     runs-on: debian-buster
