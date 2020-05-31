@@ -1,6 +1,6 @@
 on: [push]
 jobs:
-  kernel-4.19:
+  kernel-4-19:
     runs-on: debian-buster
     steps:
     - uses: actions/checkout@v2
