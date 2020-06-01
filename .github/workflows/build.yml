@@ -1,5 +1,18 @@
 on: [push]
 jobs:
+  kernel-4-09:
+    runs-on: ubuntu-latest
+    container: debian:stretch
+    steps:
+    - uses: actions/checkout@v2
+    - name: Update packages
+      run: apt-get -y update && apt-get -y upgrade
+    - name: Install packages for build
+      run: apt-get -y install linux-headers-amd64 build-essential
+    - name: Build drivers
+      run: make
+      env:
+        KERNELRELEASE: "4.9.0-12-amd64"
   kernel-4-19:
     runs-on: ubuntu-latest
     container: debian:buster
@@ -13,3 +26,16 @@ jobs:
       run: make
       env:
         KERNELRELEASE: "4.19.0-9-amd64"
+  kernel-5-06:
+    runs-on: ubuntu-latest
+    container: debian:bullseye
+    steps:
+    - uses: actions/checkout@v2
+    - name: Update packages
+      run: apt-get -y update && apt-get -y upgrade
+    - name: Install packages for build
+      run: apt-get -y install linux-headers-amd64 build-essential
+    - name: Build drivers
+      run: make
+      env:
+        KERNELRELEASE: "5.6.0-2-amd64"
