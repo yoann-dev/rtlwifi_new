@@ -802,13 +802,13 @@ static void rtl_p2p_noa_ie(struct ieee80211_hw *hw, void *data,
 							READEF1BYTE(ie+index);
 					index += 1;
 					p2pinfo->noa_duration[i] =
-						 READEF4BYTE((__le32 *)ie+index);
+						 READEF4BYTE((__le32 *)(ie+index));
 					index += 4;
 					p2pinfo->noa_interval[i] =
-						 READEF4BYTE((__le32 *)ie+index);
+						 READEF4BYTE((__le32 *)(ie+index));
 					index += 4;
 					p2pinfo->noa_start_time[i] =
-						 READEF4BYTE((__le32 *)ie+index);
+						 READEF4BYTE((__le32 *)(ie+index));
 					index += 4;
 				}
 
@@ -896,13 +896,13 @@ static void rtl_p2p_action_ie(struct ieee80211_hw *hw, void *data,
 							READEF1BYTE(ie+index);
 					index += 1;
 					p2pinfo->noa_duration[i] =
-							 READEF4BYTE((__le32 *)ie+index);
+							 READEF4BYTE((__le32 *)(ie+index));
 					index += 4;
 					p2pinfo->noa_interval[i] =
-							 READEF4BYTE((__le32 *)ie+index);
+							 READEF4BYTE((__le32 *)(ie+index));
 					index += 4;
 					p2pinfo->noa_start_time[i] =
-							 READEF4BYTE((__le32 *)ie+index);
+							 READEF4BYTE((__le32 *)(ie+index));
 					index += 4;
 				}
 

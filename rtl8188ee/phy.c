@@ -2032,16 +2032,16 @@ void rtl88e_phy_iq_calibrate(struct ieee80211_hw *hw, bool b_recovery)
 			}
 		}
 	}
-	for (i = 0; i < 4; i++) {
-		reg_e94 = result[i][0];
-		reg_e9c = result[i][1];
-		reg_ea4 = result[i][2];
-		reg_eac = result[i][3];
-		reg_eb4 = result[i][4];
-		reg_ebc = result[i][5];
-		reg_ec4 = result[i][6];
-		reg_ecc = result[i][7];
-	}
+
+	reg_e94 = result[3][0];
+	reg_e9c = result[3][1];
+	reg_ea4 = result[3][2];
+	reg_eac = result[3][3];
+	reg_eb4 = result[3][4];
+	reg_ebc = result[3][5];
+	reg_ec4 = result[3][6];
+	reg_ecc = result[3][7];
+
 	if (final_candidate != 0xff) {
 		reg_e94 = result[final_candidate][0];
 		reg_e9c = result[final_candidate][1];

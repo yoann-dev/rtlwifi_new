@@ -636,22 +636,22 @@ static bool _rtl8723e_llt_table_init(struct ieee80211_hw *hw)
 
 	for (i = 0; i < (txpktbuf_bndy - 1); i++) {
 		status = _rtl8723e_llt_write(hw, i, i + 1);
-		if (true != status)
+		if (!status)
 			return status;
 	}
 
 	status = _rtl8723e_llt_write(hw, (txpktbuf_bndy - 1), 0xFF);
-	if (true != status)
+	if (!status)
 		return status;
 
 	for (i = txpktbuf_bndy; i < maxpage; i++) {
 		status = _rtl8723e_llt_write(hw, i, (i + 1));
-		if (true != status)
+		if (!status)
 			return status;
 	}
 
 	status = _rtl8723e_llt_write(hw, maxpage, txpktbuf_bndy);
-	if (true != status)
+	if (!status)
 		return status;
 
 	rtl_write_byte(rtlpriv, REG_CR, 0xff);

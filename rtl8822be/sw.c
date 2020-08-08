@@ -127,9 +127,9 @@ int rtl8822be_init_sw_vars(struct ieee80211_hw *hw)
 	rtlpriv->phydm.adaptivity_en = 0;
 	rtlpriv->phydm.antenna_test = false;
 
-	rtlpriv->dm.dm_initialgain_enable = 1;
+	rtlpriv->dm.dm_initialgain_enable = true;
 	rtlpriv->dm.dm_flag = 0;
-	rtlpriv->dm.disable_framebursting = 0;
+	rtlpriv->dm.disable_framebursting = false;
 	rtlpriv->dm.dis_turboedca = 0;
 	/*rtlpriv->dm.thermalvalue = 0;*/
 	rtlpriv->dm.useramask = 1; /* turn on RA */
