@@ -12,7 +12,7 @@ jobs:
     - name: Build drivers
       run: make
       env:
-        KERNELRELEASE: "4.9.0-12-amd64"
+        KERNELRELEASE: "4.9.0-13-amd64"
   kernel-4-19:
     runs-on: ubuntu-latest
     container: debian:buster
@@ -25,8 +25,8 @@ jobs:
     - name: Build drivers
       run: make
       env:
-        KERNELRELEASE: "4.19.0-9-amd64"
-  kernel-5-06:
+        KERNELRELEASE: "4.19.0-10-amd64"
+  kernel-5-07:
     runs-on: ubuntu-latest
     container: debian:bullseye
     steps:
@@ -38,4 +38,4 @@ jobs:
     - name: Build drivers
       run: make
       env:
-        KERNELRELEASE: "5.6.0-2-amd64"
+        KERNELRELEASE: "5.7.0-2-amd64"
